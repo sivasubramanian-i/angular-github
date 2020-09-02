@@ -1,0 +1,26 @@
+<section class="section" style="margin: 15px;">
+  <div class="container">
+    <div class="columns is-multiline">
+      <table datatable class="row-border hover">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Image</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of users | async">
+            <td>{{ user.id }}</td>
+            <td>
+              <a routerLink="/users/{{ user.login }}">{{ user.login }}</a>
+            </td>
+            <td style="width: 50%;">
+              <img src="{{ user.avatar_url }}" style="width: 10%;" />
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>

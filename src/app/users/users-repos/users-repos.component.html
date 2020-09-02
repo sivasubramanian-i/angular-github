@@ -1,0 +1,35 @@
+<section class="section" style="margin: 15px;">
+  <div class="container">
+    <div class="columns is-multiline">
+      <table datatable class="row-border hover">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>FullName</th>
+            <th>Description</th>
+            <th>CreatedAt</th>
+          </tr>
+        </thead>
+        <tbody>
+          <td>{{ user }}</td>
+          <tr *ngFor="let user of repos">
+            <td>{{ user.id }}</td>
+            <td>
+              {{ user.name }}
+            </td>
+            <td>
+              {{ user.full_name }}
+            </td>
+            <td>
+              {{ user.description }}
+            </td>
+            <td>
+              {{ user.created_at | date }}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
